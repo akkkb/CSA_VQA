@@ -25,7 +25,7 @@ class BaseModel(nn.Module):
         joint_feat = torch.sigmoid(self.classifier(uemb))
         return joint_feat
 
-def model(dataset, num_hid, int_hid, nhead, nblock batch_size):  
+def build_model(dataset, num_hid, int_hid, nhead, nblock batch_size):  
         w_emb = WordEmbedding(dataset, 300, 0.0)
         q_emb = QuestionEmbedding(300, num_hid, 1, False, 0.0)
         v_net = FCNet([dataset.v_dim, num_hid])
